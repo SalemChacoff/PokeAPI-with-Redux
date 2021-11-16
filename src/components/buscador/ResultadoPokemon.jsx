@@ -41,7 +41,7 @@ const ResultadoPokemon = () => {
               </p>
               {buscador.pokemon.abilities.map((abilities, index) => {
                 return (
-                  <p>
+                  <p key={index}>
                     Habilidad {index + 1}:{" "}
                     <span>{abilities.ability.name} </span>
                   </p>

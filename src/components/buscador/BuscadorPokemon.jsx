@@ -6,6 +6,10 @@ const BuscadorPokemon = () => {
   const dispatch = useDispatch();
   const [pokemon, setPokemon] = useState();
 
+  const handleChange = (e) => {
+    setPokemon(e.target.value);
+  };
+
   const resultado = (e) => {
     e.preventDefault();
     dispatch(fetchPokemon(pokemon.toLowerCase()));
@@ -22,13 +26,14 @@ const BuscadorPokemon = () => {
         id="buscar_pokemon"
         value={pokemon}
         placeholder="Buscar pokemon por ejemplo: pikachu"
-        onChange={(event) => {
-          setPokemon(event.target.value);
-        }}
+        onChange={(e) => handleChange(e)}
       />
-      <button className="btn btn-primary mt-3" onClick={(e) => resultado(e)}>
-        Buscar
-      </button>
+      <input
+        className="btn btn-primary mt-3"
+        onClick={(e) => resultado(e)}
+        value="Buscar"
+        type="submit"
+      />
     </form>
   );
 };
