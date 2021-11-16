@@ -2,7 +2,6 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import store from "./redux/store";
 import { Provider } from "react-redux";
-import ShopPage from "./pages/ShopPage";
 import BuscadorPokemon from "./components/buscador/BuscadorPokemon";
 import ResultadoPokemon from "./components/buscador/ResultadoPokemon";
 import pokeimg from "./img/pokemon.png";
@@ -23,7 +22,7 @@ function App() {
       <div className="col-4 m-3 border-top pt-3 mx-auto">
         <BuscadorPokemon />
       </div>
-      <div className="col-4 m-3 mx-auto">
+      <div className="col-4 m-3 mx-auto container-fluid">
         <ResultadoPokemon />
       </div>
     </Provider>

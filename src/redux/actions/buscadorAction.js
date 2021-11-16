@@ -34,7 +34,7 @@ const fetchPokemon = (valor) => {
         dispatch(fetchPokemonSuccess(response.data));
       })
       .catch((error) => {
-        dispatch(fetchPokemonFailure("No se encontro el pokemon"));
+        dispatch(fetchPokemonFailure("No se encontro el pokémon"));
       });
   };
 };
