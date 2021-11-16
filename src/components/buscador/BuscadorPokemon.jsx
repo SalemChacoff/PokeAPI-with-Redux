@@ -10,18 +10,15 @@ const BuscadorPokemon = () => {
     dispatch(fetchPokemon(pokemon));
   }, [dispatch, pokemon]); */
 
-  const resultado = () => {
+  const resultado = (e) => {
+    e.preventDefault();
     dispatch(fetchPokemon(pokemon));
   };
 
-  useEffect(() => {
-    resultado();
-  }, []);
-
   return (
-    <div className="form-group">
-      <label htmlFor="buscar_pokemon" className="text-dark">
-        Buscar Pokemon
+    <form className="form-group">
+      <label htmlFor="buscar_pokemon">
+        <p className="text-primary">Buscar Pokemon</p>
       </label>
       <input
         type="text"
@@ -32,10 +29,10 @@ const BuscadorPokemon = () => {
           setPokemon(event.target.value);
         }}
       />
-      <button className="btn btn-primary mt-3" onClick={resultado}>
+      <button className="btn btn-primary mt-3" onClick={(e) => resultado(e)}>
         Enviar
       </button>
-    </div>
+    </form>
   );
 };
 

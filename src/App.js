@@ -5,17 +5,25 @@ import { Provider } from "react-redux";
 import ShopPage from "./pages/ShopPage";
 import BuscadorPokemon from "./components/buscador/BuscadorPokemon";
 import ResultadoPokemon from "./components/buscador/ResultadoPokemon";
+import pokeimg from "./img/pokemon.png";
 
 function App() {
   console.log(store.getState());
 
   return (
     <Provider store={store}>
-      <ShopPage />
-      <div className="col-8 ml-5 border-top pt-3">
+      <div className="col-4 m-3 border-top pt-3 mx-auto">
+        <img
+          src={pokeimg}
+          alt="pokemon"
+          className="card-img"
+          style={{ width: "400px", height: "120px" }}
+        />
+      </div>
+      <div className="col-4 m-3 border-top pt-3 mx-auto">
         <BuscadorPokemon />
       </div>
-      <div className="col-12">
+      <div className="col-4 m-3 mx-auto">
         <ResultadoPokemon />
       </div>
     </Provider>
