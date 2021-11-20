@@ -4,19 +4,19 @@ import fetchPokemon from "../../redux/actions/buscadorAction";
 
 const BuscadorPokemon = () => {
   const dispatch = useDispatch();
-  const [pokemon, setPokemon] = useState();
+  const [pokemon, setPokemon] = useState("");
 
   const handleChange = (e) => {
     setPokemon(e.target.value);
   };
 
-  const resultado = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(fetchPokemon(pokemon.toLowerCase()));
   };
 
   return (
-    <form className="form-group">
+    <form className="form-group" onSubmit={handleSubmit}>
       <label htmlFor="buscar_pokemon">
         <p className="text-primary">Buscar Pokémon</p>
       </label>
@@ -28,12 +28,7 @@ const BuscadorPokemon = () => {
         placeholder="Buscar pokemon por ejemplo: pikachu"
         onChange={(e) => handleChange(e)}
       />
-      <input
-        className="btn btn-primary mt-3"
-        onClick={(e) => resultado(e)}
-        value="Buscar"
-        type="submit"
-      />
+      <input className="btn btn-primary mt-3" value="Buscar" type="submit" />
     </form>
   );
 };
